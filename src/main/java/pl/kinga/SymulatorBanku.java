@@ -2,26 +2,26 @@ package pl.kinga;
 
 public class SymulatorBanku {
 
-    public static void sprobujPodniescLimit(int limit){
+    public static void sprobujPodniescLimit(int limit) {
         limit += 5000;
         System.out.println("Limit w metodzie: " + limit);
     }
 
-    public static void dodajTransakcje(int[] historia, int indeks, int kwota){
+    public static void dodajTransakcje(int[] historia, int indeks, int kwota) {
         historia[indeks] = kwota;
     }
 
-    public static void wyzerujHistorie(int[] historia){
+    public static void wyzerujHistorie(int[] historia) {
         historia = new int[historia.length];
         System.out.println("Historia w metodzie: " + historia[0]);
     }
 
-    public static void sprobujZmienicNazweKlienta(String nazwa){
+    public static void sprobujZmienicNazweKlienta(String nazwa) {
         nazwa += " Premium";
         System.out.println("Wewnątrz metody nazwa: " + nazwa);
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         // --- Test 1: prymityw ---
         int limitKredytu = 10000;
         sprobujPodniescLimit(limitKredytu);

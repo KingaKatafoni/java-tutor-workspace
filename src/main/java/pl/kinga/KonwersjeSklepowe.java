@@ -16,10 +16,10 @@ public class KonwersjeSklepowe {
         // Wynik zaokraglij w dol do pelnych groszy (int).
         // Wypisz: "Cena po rabacie: XX.XX zl (XXXX gr)"
 
-        int cenaPoRabacieGrosze = (int)(cenaGrosze * 0.85);  // 4249 gr
+        int cenaPoRabacieGrosze = (int) (cenaGrosze * 0.85);  // 4249 gr
         double cenaPoRabacieZlotowki = (double) cenaPoRabacieGrosze / 100;  // 42.49 zl
 
-        System.out.println("Cena po rabacie: " + cenaPoRabacieZlotowki + " zl " + "(" +  cenaPoRabacieGrosze + " gr)");
+        System.out.println("Cena po rabacie: " + cenaPoRabacieZlotowki + " zl " + "(" + cenaPoRabacieGrosze + " gr)");
 
 
         // ZADANIE 3: Klient podal ilosc sztuk jako String (np. z formularza)
@@ -27,7 +27,7 @@ public class KonwersjeSklepowe {
         // Sparsuj na int, oblicz wartosc zamowienia (ilosc * cena w groszach)
         // Wypisz: "Zamowienie: X szt. x XX.XX zl = XXX.XX zl"
         double wartoscZamowienia = Integer.parseInt(iloscTekst) * cenaGrosze;
-        System.out.println("Zamowienie: " + iloscTekst + " szt. x " + cenaZlotowki + " zl = " + wartoscZamowienia/100 + " zl");
+        System.out.println("Zamowienie: " + iloscTekst + " szt. x " + cenaZlotowki + " zl = " + wartoscZamowienia / 100 + " zl");
 
 
         // ZADANIE 4: Kod produktu to char. Jaki jest jego kod ASCII?
