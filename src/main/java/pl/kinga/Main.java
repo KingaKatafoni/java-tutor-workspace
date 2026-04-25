@@ -2,8 +2,11 @@ package pl.kinga;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, Kinga! Dzien 2 — Maven dziala!");
-        System.out.println("Drugi commit w życiu :) ");
-        System.out.println("Sprawdzenie GitHuba");
+        double skladkaMiesieczna = 0.1;
+        double skladkaRoczna = skladkaMiesieczna * 12;
+        System.out.println("Skladka roczna: " + skladkaRoczna);
+
+        System.out.println("0.1 + 0.2 = " + (0.1 + 0.2));
+        System.out.println("1.0 - 0.9 = " + (1.0 - 0.9));
     }
 }
