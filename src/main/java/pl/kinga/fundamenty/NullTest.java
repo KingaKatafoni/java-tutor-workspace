@@ -1,4 +1,4 @@
-package pl.kinga;
+package pl.kinga.fundamenty;
 
 public class NullTest {
     public static void main(String[] args) {

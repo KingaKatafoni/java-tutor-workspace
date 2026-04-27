@@ -1,4 +1,4 @@
-package pl.kinga;
+package pl.kinga.fundamenty;
 
 import static pl.kinga.SklepRefaktoryzacja.SklepInternetowy.wyswietlDaneProduktu;
 

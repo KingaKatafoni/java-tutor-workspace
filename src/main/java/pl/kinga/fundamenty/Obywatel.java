@@ -1,4 +1,4 @@
-package pl.kinga;
+package pl.kinga.fundamenty;
 
 import java.math.BigDecimal;
 

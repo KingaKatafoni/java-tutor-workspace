@@ -1,4 +1,4 @@
-package pl.kinga;
+package pl.kinga.fundamenty;
 
 public class GeneratorWyciagu {
     public static String generujWyciag(String numerKonta, String[] opisy, double[] kwoty){

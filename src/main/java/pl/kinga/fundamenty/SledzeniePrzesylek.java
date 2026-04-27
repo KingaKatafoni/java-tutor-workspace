@@ -1,4 +1,4 @@
-package pl.kinga;
+package pl.kinga.fundamenty;
 
 public class SledzeniePrzesylek {
     public static void raportDostaw(String[] przesylki, String[] statusy){

@@ -1,4 +1,4 @@
-package pl.kinga;
+package pl.kinga.fundamenty;
 
 public class SortowaniePaczek {
     public static void sortujPaczki(double[] wagi){

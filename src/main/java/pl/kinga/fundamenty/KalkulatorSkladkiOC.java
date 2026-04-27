@@ -1,4 +1,4 @@
-package pl.kinga;
+package pl.kinga.fundamenty;
 
 public class KalkulatorSkladkiOC {
    static double skladkaBazowa = 1200.00;

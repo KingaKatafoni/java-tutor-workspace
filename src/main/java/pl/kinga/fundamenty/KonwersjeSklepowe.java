@@ -1,4 +1,4 @@
-package pl.kinga;
+package pl.kinga.fundamenty;
 
 public class KonwersjeSklepowe {
     public static void main(String[] args) {
