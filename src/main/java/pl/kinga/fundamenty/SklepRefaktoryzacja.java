@@ -1,6 +1,7 @@
 package pl.kinga.fundamenty;
 
-import static pl.kinga.SklepRefaktoryzacja.SklepInternetowy.wyswietlDaneProduktu;
+
+import static pl.kinga.fundamenty.SklepRefaktoryzacja.SklepInternetowy.wyswietlDaneProduktu;
 
 public class SklepRefaktoryzacja {
     public class SklepInternetowy {
