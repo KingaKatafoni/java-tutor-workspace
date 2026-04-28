@@ -1,41 +1,25 @@
 package pl.kinga.oop;
 
+import java.math.BigDecimal;
+
 public class Main {
     public static void main(String[] args) {
-        WniosekUrzedowy wniosekAK = new WniosekUrzedowy();
-        wniosekAK.numerWniosku = "WN-2026/001";
-        wniosekAK.imieWnioskodawcy = "Anna";
-        wniosekAK.nazwiskoWnioskodawcy = "Kowalska";
-        wniosekAK.typWniosku = "dowod osobisty";
-        wniosekAK.dataZlozenia = "2026-04-27";
-        wniosekAK.status = "zlozony";
 
-        WniosekUrzedowy wniosekJN = new WniosekUrzedowy();
-        wniosekJN.numerWniosku = "WN-2026/002";
-        wniosekJN.imieWnioskodawcy = "Jan";
-        wniosekJN.nazwiskoWnioskodawcy = "Nowak";
-        wniosekJN.typWniosku = "meldunek";
-        wniosekJN.dataZlozenia = "2026-04-27";
-        wniosekJN.status = "zlozony";
+        RachunekBankowy rachunekBankowyAnna = new RachunekBankowy("PL61 1090 0014 0000 0712 1981 0001",
+                "Anna Kowalska", new BigDecimal("5000"));
 
-        WniosekUrzedowy wniosekMW = new WniosekUrzedowy();
-        wniosekMW.numerWniosku = "WN-2026/003";
-        wniosekMW.imieWnioskodawcy = "Maria";
-        wniosekMW.nazwiskoWnioskodawcy = "Wisniewska";
-        wniosekMW.typWniosku = "odpis aktu urodzenia";
-        wniosekMW.dataZlozenia = "2026-04-27";
-        wniosekMW.status = "zlozony";
+        RachunekBankowy rachunekBankowyJan = new RachunekBankowy("PL61 1090 0014 0000 0712 1981 0002", "Jan Kowalski", "firmowe", new BigDecimal("120000"));
 
-        wniosekAK.wyswietlPodsumowanie();
-        wniosekJN.wyswietlPodsumowanie();
-        wniosekMW.wyswietlPodsumowanie();
+        rachunekBankowyAnna.wyswietlInformacje();
+        rachunekBankowyJan.wyswietlInformacje();
 
-        wniosekAK.zmienStatus("zatwierdzony");
-        wniosekJN.zmienStatus("w trakcie");
+        rachunekBankowyAnna.wplata(new BigDecimal("2500"));
+        rachunekBankowyJan.wyplata(new BigDecimal("45000"));
 
-        wniosekAK.wyswietlPodsumowanie();
-        wniosekJN.wyswietlPodsumowanie();
+        rachunekBankowyAnna.wyplata(new BigDecimal("10000"));
 
+        rachunekBankowyAnna.wyswietlInformacje();
+        rachunekBankowyJan.wyswietlInformacje();
 
 
     }
