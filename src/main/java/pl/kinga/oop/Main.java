@@ -5,21 +5,18 @@ import java.math.BigDecimal;
 public class Main {
     public static void main(String[] args) {
 
-        RachunekBankowy rachunekBankowyAnna = new RachunekBankowy("PL61 1090 0014 0000 0712 1981 0001",
-                "Anna Kowalska", new BigDecimal("5000"));
+       Polisa polisaKW = new Polisa("POL-2026/00451","Katarzyna", "Wisniewska", "na zycie", new BigDecimal("100000"), new BigDecimal("150"));
+       Polisa polisaTN = new Polisa("POL-2026/00452","Tomasz", "Nowak", "komunikacyjna OC", new BigDecimal("50000"), new BigDecimal("89.90"));
 
-        RachunekBankowy rachunekBankowyJan = new RachunekBankowy("PL61 1090 0014 0000 0712 1981 0002", "Jan Kowalski", "firmowe", new BigDecimal("120000"));
+       polisaKW.wyswietlPolise();
+       polisaTN.wyswietlPolise();
 
-        rachunekBankowyAnna.wyswietlInformacje();
-        rachunekBankowyJan.wyswietlInformacje();
+       polisaKW.setSkladkaMiesieczna(new BigDecimal("175"));
+       polisaTN.setKwotaUbezpieczenia(new BigDecimal("-500"));
+       polisaTN.dezaktywujPolise();
 
-        rachunekBankowyAnna.wplata(new BigDecimal("2500"));
-        rachunekBankowyJan.wyplata(new BigDecimal("45000"));
-
-        rachunekBankowyAnna.wyplata(new BigDecimal("10000"));
-
-        rachunekBankowyAnna.wyswietlInformacje();
-        rachunekBankowyJan.wyswietlInformacje();
+       polisaKW.wyswietlPolise();
+       polisaTN.wyswietlPolise();
 
 
     }
