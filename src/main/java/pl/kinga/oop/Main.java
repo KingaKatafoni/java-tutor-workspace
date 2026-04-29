@@ -4,21 +4,23 @@ import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) {
+       ProduktSklepowy produkt1 = new ProduktSklepowy("Klawiatura mechaniczna", "Elektronika",  new BigDecimal("199.99"),  15);
+       ProduktSklepowy produkt2 = new ProduktSklepowy("Koszulka polo", "Odziez", new BigDecimal("79.90"), 120);
+       ProduktSklepowy produkt3 = new ProduktSklepowy("Ksiazka Java w akcji", "Ksiazki", new BigDecimal("65.00"), 0);
 
-       Polisa polisaKW = new Polisa("POL-2026/00451","Katarzyna", "Wisniewska", "na zycie", new BigDecimal("100000"), new BigDecimal("150"));
-       Polisa polisaTN = new Polisa("POL-2026/00452","Tomasz", "Nowak", "komunikacyjna OC", new BigDecimal("50000"), new BigDecimal("89.90"));
+       ProduktSklepowy produkt4 = new ProduktSklepowy("Zasilacz USB-C", new BigDecimal("49.99"));
 
-       polisaKW.wyswietlPolise();
-       polisaTN.wyswietlPolise();
+       produkt1.wyswietlProdukt();
+       produkt2.wyswietlProdukt();
+       produkt3.wyswietlProdukt();
+       produkt4.wyswietlProdukt();
 
-       polisaKW.setSkladkaMiesieczna(new BigDecimal("175"));
-       polisaTN.setKwotaUbezpieczenia(new BigDecimal("-500"));
-       polisaTN.dezaktywujPolise();
+       System.out.println("Laczna liczba produktow: " + ProduktSklepowy.getLiczbaProduktow());
+       produkt1.setCenaNetto(new BigDecimal("179.99"));
+       produkt3.setStanMagazynowy(-5);
 
-       polisaKW.wyswietlPolise();
-       polisaTN.wyswietlPolise();
-
-
+       produkt1.wyswietlProdukt();
+       produkt3.wyswietlProdukt();
     }
 
 }
