@@ -4,23 +4,18 @@ import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) {
-       ProduktSklepowy produkt1 = new ProduktSklepowy("Klawiatura mechaniczna", "Elektronika",  new BigDecimal("199.99"),  15);
-       ProduktSklepowy produkt2 = new ProduktSklepowy("Koszulka polo", "Odziez", new BigDecimal("79.90"), 120);
-       ProduktSklepowy produkt3 = new ProduktSklepowy("Ksiazka Java w akcji", "Ksiazki", new BigDecimal("65.00"), 0);
+       System.out.println(NarzedziaOperatora.czyNumerPoprawny("501234567"));
+       System.out.println(NarzedziaOperatora.czyNumerPoprawny("123456789"));
+       System.out.println(NarzedziaOperatora.czyNumerPoprawny("50123"));
 
-       ProduktSklepowy produkt4 = new ProduktSklepowy("Zasilacz USB-C", new BigDecimal("49.99"));
+       System.out.println(NarzedziaOperatora.formatujNumer("501234567"));
 
-       produkt1.wyswietlProdukt();
-       produkt2.wyswietlProdukt();
-       produkt3.wyswietlProdukt();
-       produkt4.wyswietlProdukt();
+       System.out.println(NarzedziaOperatora.obliczBrutto(new BigDecimal("49.99")));
 
-       System.out.println("Laczna liczba produktow: " + ProduktSklepowy.getLiczbaProduktow());
-       produkt1.setCenaNetto(new BigDecimal("179.99"));
-       produkt3.setStanMagazynowy(-5);
+       System.out.println(NarzedziaOperatora.obliczRabat(new BigDecimal(120), 20));
 
-       produkt1.wyswietlProdukt();
-       produkt3.wyswietlProdukt();
+       System.out.println(NarzedziaOperatora.opisPakietu("Internet Max", new BigDecimal("49.99"), 50, 300));
+       System.out.println(NarzedziaOperatora.opisPakietu("Starter", new BigDecimal("29.99"), 10, 100));
     }
 
 }
