@@ -4,42 +4,33 @@ import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) {
-        Urzednik urzednik = new Urzednik("Katarzyna", "Figura", "PO-9087", new BigDecimal("40.50"), "Wydzial Komunikacji");
-
-        Kierownik kierownik = new Kierownik("Bogdan", "Moscicki", "PY-5436", new BigDecimal("65.00"), new BigDecimal("600.00"));
-
-        System.out.println(urzednik.przedstawSie());
-        System.out.println(kierownik.przedstawSie());
-
-        BigDecimal wynagrodzenieKierownika = kierownik.obliczWynagrodzenieMiesieczne(160);
-        BigDecimal wynagrodzenieUrzednika = urzednik.obliczWynagrodzenieMiesieczne(160);
-
-        if (wynagrodzenieKierownika.compareTo(wynagrodzenieUrzednika) > 0){
-            System.out.println("Kierownik zarabia więcej");
-        } else if (wynagrodzenieKierownika.compareTo(wynagrodzenieUrzednika) == 0) {
-            System.out.println("Urzednik i kierownik zarabiaja tyle samo");
-        } else {
-            System.out.println("Urzednik zarabia wiecej");
-            }
-
-        PracownikUrzedu[] pracownicyUrzedu = {
-                new PracownikUrzedu("Jan", "Niezbędny", "KL-234", new BigDecimal("90.50")),
-                new Kierownik("Paulina", "Czapska", "WE-765", new BigDecimal("35.60"), new BigDecimal("450.00")),
-                new Urzednik("Kamil", "Wrona", "PO-098", new BigDecimal("59.50"), "Wydzial Administracji")
+        KontoBankowe[] kontaBankowe = {
+                new KontoBankowe("PL-3456-K", "Jan Niezbedny", new BigDecimal("12000")),
+                new KontoOszczednosciowe("PL-235-F", "Kinga Binga", new BigDecimal("150000"), new BigDecimal("0.06")),
+                new KontoFirmowe("PL-9003_F", "Krystian Pudzian", new BigDecimal("5600"), new BigDecimal("4000"))
         };
 
-        for (PracownikUrzedu pracownik : pracownicyUrzedu) {
-            System.out.println(
-                    "Typ: " +
-                            pracownik.getTypPracownika()
-                            + ", " +
-                            pracownik.getImie()
-                            + " " +
-                            pracownik.getNazwisko()
-            );
+        for (KontoBankowe konto : kontaBankowe){
+            System.out.println(konto.info());
+            System.out.println("Odsetki roczne konta " + konto.getNumerKonta() + ": " +konto.obliczOdsetkiRoczne() + "zl");
         }
 
+        System.out.println("Suma odsetek dla wszytskich kont: " + sumaOdsetek(kontaBankowe) + " zl");
 
+
+    }
+
+    public static BigDecimal sumaOdsetek(KontoBankowe[] konta){
+        BigDecimal sumaOdsetek = new BigDecimal("0");
+        for (int i = 0; i < konta.length; i++ ) {
+            BigDecimal odsetki = konta[i].obliczOdsetkiRoczne();
+            sumaOdsetek = sumaOdsetek.add(odsetki);
+        }
+        return sumaOdsetek;
+
+        //**Pytanie:** Czy musisz zmieniac metode `sumaOdsetek()`? Dlaczego tak lub nie?
+        // Nie musze zmieniac metody sumaOdsetek, poniewaz jest ona uniwersalna i zmienne na ktorych dzialam nie sa przypisane na sztywno.
+        // Jezeli po miesiacu dodane zostanie kolejny rodzaj konta to do tablicy typu KontoBankowe dodam kolejny obiekt typu KontoStudenckie i metoda sumaOdsetek zwroci sume powiekszona o odsetki z konta studenckiego.
     }
 
 }
