@@ -75,7 +75,7 @@ public class ShipmentAnalyzer {
                 .toList(); // filter przed flatMap() bo chcemy filtrować po kolekcji nadrzędnej a nie zagnieżdżonej
 
         deliveredParcels.forEach(System.out::println);
-        
+
         System.out.println("----7# How much send to Krakow----");
         long sendToKrakow = shipments.stream()
                 .flatMap(par -> par.parcels().stream())
