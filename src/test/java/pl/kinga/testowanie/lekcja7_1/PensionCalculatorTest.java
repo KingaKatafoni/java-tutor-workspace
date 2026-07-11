@@ -1,15 +1,15 @@
 package pl.kinga.testowanie.lekcja7_1;
 
 import org.junit.jupiter.api.Test;
-import pl.kinga.fundamenty.PrzewidzWynik;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class PensionCalculatorTest {
     //Konwencja: `should[OczekiwanyWynik]When[Warunek]`
 
     @Test
-    void shouldReturnCorrectPensionWhenRetirementAge60(){
+    void shouldReturnCorrectPensionWhenRetirementAge60() {
         PensionCalculator calculator = new PensionCalculator();
 
         double pension = calculator.calculateMonthlyPension(300000, 60);
@@ -18,7 +18,7 @@ class PensionCalculatorTest {
     }
 
     @Test
-    void shouldReturnCorrectMonthlyPensionWhenRetirementAge65(){
+    void shouldReturnCorrectMonthlyPensionWhenRetirementAge65() {
         PensionCalculator calculator = new PensionCalculator();
 
         double pension = calculator.calculateMonthlyPension(500000, 65);
@@ -27,7 +27,7 @@ class PensionCalculatorTest {
     }
 
     @Test
-    void shouldReturnCorrectMonthlyPensionWhenRetirementAge67(){
+    void shouldReturnCorrectMonthlyPensionWhenRetirementAge67() {
         PensionCalculator calculator = new PensionCalculator();
 
         double pension = calculator.calculateMonthlyPension(800000, 67);
@@ -36,7 +36,7 @@ class PensionCalculatorTest {
     }
 
     @Test
-    void shouldThrowIllegalArgumentExceptionWhenAgeUnsupported(){
+    void shouldThrowIllegalArgumentExceptionWhenAgeUnsupported() {
         PensionCalculator calculator = new PensionCalculator();
 
         assertThrows(IllegalArgumentException.class,
@@ -44,7 +44,7 @@ class PensionCalculatorTest {
     }
 
     @Test
-    void shouldThrowIllegalArgumentWhenContributionBelowZero(){
+    void shouldThrowIllegalArgumentWhenContributionBelowZero() {
         PensionCalculator calculator = new PensionCalculator();
 
         assertThrows(IllegalArgumentException.class,
@@ -52,7 +52,7 @@ class PensionCalculatorTest {
     }
 
     @Test
-    void shouldReturnBelowMinimumWhenPension1200(){
+    void shouldReturnBelowMinimumWhenPension1200() {
         PensionCalculator calculator = new PensionCalculator();
 
         String category = calculator.estimateCategory(1200.0);
@@ -61,40 +61,39 @@ class PensionCalculatorTest {
     }
 
     @Test
-    void shouldReturnMinimumWhenPension1600(){
+    void shouldReturnMinimumWhenPension1600() {
         PensionCalculator calculator = new PensionCalculator();
         String category = calculator.estimateCategory(1600.0);
         assertEquals("MINIMUM", category);
     }
 
     @Test
-    void shouldReturnMinimumWhenPension2999_99(){
+    void shouldReturnMinimumWhenPension2999_99() {
         PensionCalculator calculator = new PensionCalculator();
         String category = calculator.estimateCategory(2999.99);
         assertEquals("MINIMUM", category);
     }
 
     @Test
-    void shouldReturnAverageWhenPension3000(){
+    void shouldReturnAverageWhenPension3000() {
         PensionCalculator calculator = new PensionCalculator();
         String category = calculator.estimateCategory(3000.0);
         assertEquals("AVERAGE", category);
     }
 
     @Test
-    void shouldReturnAboveAverageWhenPension5000(){
+    void shouldReturnAboveAverageWhenPension5000() {
         PensionCalculator calculator = new PensionCalculator();
         String category = calculator.estimateCategory(5000.00);
         assertEquals("ABOVE_AVERAGE", category);
     }
 
     @Test
-    void shouldThrowIllegalArgumentWhenPensionBelow0(){
+    void shouldThrowIllegalArgumentWhenPensionBelow0() {
         PensionCalculator calculator = new PensionCalculator();
         assertThrows(IllegalArgumentException.class,
                 () -> calculator.estimateCategory(-100.00));
     }
-
 
 
 }
