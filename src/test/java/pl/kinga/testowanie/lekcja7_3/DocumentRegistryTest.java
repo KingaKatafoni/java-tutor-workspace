@@ -33,7 +33,7 @@ class DocumentRegistryTest {
     }
 
     @Test
-    void shouldReturnAddedDocumentWhenCatagoryExists() {
+    void shouldReturnAddedDocumentWhenCategoryExists() {
         registry.addDocument("DOC-1", "Wedding agreement", "civil", 1999);
         registry.addDocument("DOC-2", "Budget 2024", "FINANCE", 2024);
         registry.addDocument("DOC-3", "Budget 2022", "FINANCE", 2022);
