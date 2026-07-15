@@ -1,9 +1,8 @@
-package pl.kinga.testowanie.lekcja7_4;
+package pl.kinga.testowanie.lekcja7_4_5;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;

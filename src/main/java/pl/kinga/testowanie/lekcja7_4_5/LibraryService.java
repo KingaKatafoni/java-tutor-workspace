@@ -1,4 +1,4 @@
-package pl.kinga.testowanie.lekcja7_4;
+package pl.kinga.testowanie.lekcja7_4_5;
 
 import java.util.*;
 

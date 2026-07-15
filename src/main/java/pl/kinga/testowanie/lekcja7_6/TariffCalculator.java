@@ -1,4 +1,4 @@
-package pl.kinga.testowanie.lekcja7_5;
+package pl.kinga.testowanie.lekcja7_6;
 
 public class TariffCalculator {
     public double calculateMonthlyCost(Plan plan, int usedMinutes, int usedGigabytes) {

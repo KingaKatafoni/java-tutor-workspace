@@ -1,4 +1,4 @@
-package pl.kinga.testowanie.lekcja7_5;
+package pl.kinga.testowanie.lekcja7_6;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

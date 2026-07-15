@@ -1,4 +1,4 @@
-package pl.kinga.testowanie.lekcja7_6;
+package pl.kinga.testowanie.lekcja7_7;
 
 public interface NotificationService {
     void sendApprovalNotification(String holderName, String policyId);

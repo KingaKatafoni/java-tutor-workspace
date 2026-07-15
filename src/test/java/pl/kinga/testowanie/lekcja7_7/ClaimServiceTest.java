@@ -1,4 +1,4 @@
-package pl.kinga.testowanie.lekcja7_6;
+package pl.kinga.testowanie.lekcja7_7;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

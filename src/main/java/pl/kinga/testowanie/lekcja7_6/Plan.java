@@ -1,4 +1,4 @@
-package pl.kinga.testowanie.lekcja7_5;
+package pl.kinga.testowanie.lekcja7_6;
 
 public enum Plan {
     BASIC(29.99, 100, 3),
