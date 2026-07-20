@@ -245,7 +245,7 @@ class PaymentServiceTest {
     @Test
     void shouldVerifyFindByIdWhenExecutedOnceWithCorrectArgs() {
         Customer customer = new Customer("C-001", "Anna Nowak", "anna.nowak@gmail.com", true);
-        
+
         when(customerRepository.findById("C-001")).thenReturn(customer);
         when(paymentGateway.charge("C-001", 5000.0)).thenReturn(new PaymentResult("TRX-001", "C-001", 5000.0, PaymentStatus.APPROVED, "Approved"));
 
