@@ -8,7 +8,7 @@ class ConfirmationFormatterTest {
     @Test
     void shouldContainsFormatterGeneratedId() {
         Citizen citizen = new Citizen("12345678901", "Adam", "Malysz", 56, "Wisla");
-    
+
         ConfirmationFormatter confirmationFormatter = new ConfirmationFormatter();
 
         String formatConfirmation = confirmationFormatter.formatConfirmation(citizen, "CIT-1234-3456");
