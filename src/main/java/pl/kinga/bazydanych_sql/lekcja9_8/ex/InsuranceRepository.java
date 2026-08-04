@@ -28,7 +28,8 @@ public class InsuranceRepository {
                                     pesel VARCHAR(11) NOT NULL,
                                     policy_type VARCHAR(30) NOT NULL,
                                     premium DECIMAL(10,2) NOT NULL,
-                                    start_date DATE NOT NULL,
+                              
+                                   start_date DATE NOT NULL,
                                     is_active BOOLEAN NOT NULL DEFAULT TRUE
                                 )
                                 
