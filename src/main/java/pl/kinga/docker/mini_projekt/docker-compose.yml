@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: resuser
+      POSTGRES_PASSWORD: respass123
+      POSTGRES_DB: residents
+    volumes:
+      - residents-data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  app:
+    build: .
+    depends_on:
+      - db
+volumes:
+  residents-data:
+
+
